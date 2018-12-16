@@ -1,0 +1,36 @@
+<div class="container">
+
+    <div class="row" style="padding-bottom: 30px">
+        <div class="col-xs-10">
+          <h1>My Weather App</h1>
+          <hr>
+          
+        </div>
+    </div>
+  <div class="form-row">
+    <form (ngSubmit)="OnSubmit(f)"   #f="ngForm">
+    <label for ="cityName">Enter Place</label>
+    <input name="cityname" type="text" 
+    class="form-control" 
+    required placeholder="Enter City Name"
+    ngModel><br><br>
+    <button type="submit" class="btn btn-primary"> Search</button>
+  </form>
+  </div>
+  <br><br>
+<!-- 
+  //Show the Info -->
+  <div class="row">
+    <div class="col-md-6">City:<strong>{{cityName}}</strong></div>
+    <div class="col-md-6">Todays Temperature(in fahrenheit):<strong>{{Temperature}}</strong> </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" >Next 5 days Temperature in fahrenheit :</div>
+    <div class="col-md-12" *ngFor= "let forecast of weatherforecast" >
+     <strong> {{forecast}} </strong> <br>
+    </div>
+  </div>
+  </div>
+
+
+
